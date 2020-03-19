@@ -24,7 +24,7 @@ const Order = () => {
     user.cart = []
     dispatch(removeCart())
     const confirm = await updateUser(user)
-    sessionStorage.setItem('userData', JSON.stringify(user))
+    sessionStorage.setItem('userData', JSON.stringify(user.username))
     window.location.pathname = await '/confirm'
   }
 

@@ -25,7 +25,7 @@ const MenuUser = ({ history },props) => {
           <a href="#" onClick={(e) => {
             e.preventDefault();
             sessionStorage.removeItem('userData')
-            window.location.reload()
+            window.location.pathname = ('/')
           }}>{t('button.logout')}</a>
         </li>
         <li className="-left -usernot">

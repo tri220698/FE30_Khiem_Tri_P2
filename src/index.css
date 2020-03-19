@@ -3431,18 +3431,15 @@ footer .bonus__foot .bonus__text ul li a {
 }
 
 .content-dashboard {
-  flex: 0 0 80%;
-  max-width: 80%;
+  flex: 0 0 100%;
+  max-width: 100%;
   height: auto;
   margin-left: auto;
   transition: all 0.4s;
 }
 .content-dashboard .table-scroll {
   max-height: 259px;
-  overflow: hidden;
-}
-.content-dashboard .table-scroll:hover {
-  overflow-y: auto;
+  overflow: auto;
 }
 .content-dashboard .table-scroll .content-dashboard-table {
   width: 100%;
@@ -3619,10 +3616,11 @@ footer .bonus__foot .bonus__text ul li a {
 }
 .content-dashboard-profile-right__bottom {
   margin-top: 15px;
+  margin-left: 10px;
+  display: inline-block;
 }
 .content-dashboard-profile-right__bottom button {
   outline: none;
-  margin-left: 10px;
   background-color: #3f51b5;
   border: 1px solid #3f51b5;
   padding: 10px;
@@ -3634,6 +3632,9 @@ footer .bonus__foot .bonus__text ul li a {
 }
 .content-dashboard-profile-right__bottom button:hover {
   background-color: #121f6b;
+}
+.content-dashboard-profile-right__bottom button:disabled {
+  opacity: 0.5;
 }
 
 input.-right {

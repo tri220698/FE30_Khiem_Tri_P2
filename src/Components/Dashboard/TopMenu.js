@@ -21,6 +21,11 @@ function showAdmin() {
   }
 }
 
+const logOut = () => {
+  sessionStorage.removeItem('userData')
+  window.location.pathname = ('/')
+}
+
 const TopMenu = () => {
   return(
     <header className="header-dashboard">
@@ -31,7 +36,7 @@ const TopMenu = () => {
         }}>Admin</a>
       </span>
       <span className="header-dashboard__logout">
-        <img src={logoutImg} alt="logo" />
+        <img src={logoutImg} alt="logo" onClick={logOut}/>
       </span>
     </header>
   )

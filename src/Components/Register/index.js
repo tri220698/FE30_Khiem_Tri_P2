@@ -47,7 +47,7 @@ const Register = ({ history }) => {
       newUser.cart = []
       setNewUser(newUser)
       const regis = await RegisUser(newUser)
-      sessionStorage.setItem('userData', JSON.stringify(newUser))
+      sessionStorage.setItem('userData', JSON.stringify(newUser.username))
       window.location.pathname = ('/')
     }
   }

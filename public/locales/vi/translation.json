@@ -188,5 +188,44 @@
     "3": "Giỏ hàng của bạn đang trống hoặc bạn chưa xác nhận lại giỏ hàng của mình",
     "4": "Cảm ơn bạn đã mua hàng ở shop chúng thôi, chúng tôi sẽ liên lạc với bạn sớm nhất để xác nhận đơn hàng",
     "5": "Đặt hàng thành công"
+  },
+  "dashboard": {
+    "admin": "Admin",
+    "menu": {
+      "Dashboard": "Dashboard",
+      "Categories": "Categories",
+      "Products": "Products",
+      "Users": "Users",
+      "Account": "Account"
+    },
+    "warning": {
+      "1": "Bạn có chắc chắn không ?",
+      "2": "Xóa thành công",
+      "3": "Cập nhật thành công"
+    },
+    "table": {
+      "1": "Users Id",
+      "2": "Customer",
+      "3": "Phone",
+      "4": "Addrres",
+      "5": "Band"
+    },
+    "form": {
+      "1": "Nobody",
+      "2": "Profile",
+      "3": "The information can be edited",
+      "4": "Name",
+      "5": "Email",
+      "6": "Phone Number",
+      "7": "Address",
+      "8": "Password",
+      "9": "Confirm Password",
+      "10": "SAVE DETAILS"
+    }
+  },
+  "error": {
+    "1": "404 error",
+    "2": "Đã xảy ra lỗi!",
+    "3": "Xin vui lòng trở về trang chủ"
   }
 }
