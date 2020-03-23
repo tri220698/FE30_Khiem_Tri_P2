@@ -100,3 +100,9 @@ export const getByUser = (username) => {
     })
     .catch(error => window.location.pathname = ('/error'))
 }
+
+export const updateCart = (item) => {
+  return axios.put(`${url}/carts/${item.id}`, item)
+    .then(res => {})
+    .catch(error => window.location.pathname = ('/error'))
+}

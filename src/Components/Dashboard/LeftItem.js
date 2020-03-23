@@ -21,20 +21,20 @@ const LeftItem = () => {
           <div className="menu-dashboard-content__item"><span><img src={`${url}/image/dashboard.svg`} alt="a" /></span>
             <p>{t('dashboard.menu.Dashboard')}</p>
           </div></Link>
-        <Link>
-          <div className="menu-dashboard-content__item -more"><span><img src={`${url}/image/categories.svg`}
-            alt="a" /></span>
-            <p>{t('dashboard.menu.Categories')}</p>
-          </div></Link>
+        <Link to="/admin/users">
+        <div className="menu-dashboard-content__item" ><span><img src={`${url}/image/users.svg`} alt="a" /></span>
+          <p>{t('dashboard.menu.Users')}</p>
+        </div></Link>
         <Link>
           <div className="menu-dashboard-content__item"><span><img src={`${url}/image/products.svg`} alt="a" /></span>
             <p>{t('dashboard.menu.Products')}</p>
           </div>
         </Link>
-        <Link to="/admin/users">
-          <div className="menu-dashboard-content__item" ><span><img src={`${url}/image/users.svg`} alt="a" /></span>
-            <p>{t('dashboard.menu.Users')}</p>
-          </div></Link>
+        <Link to="/admin/carts">
+        <div className="menu-dashboard-content__item"><span><img src={`${url}/image/carts.svg`}
+          alt="a" /></span>
+          <p>{t('dashboard.menu.Carts')}</p>
+        </div></Link>
         <Link to="/admin/account">
           <div className="menu-dashboard-content__item" ><span><img src={`${url}/image/account.svg`} alt="a" /></span>
             <p>{t('dashboard.menu.Account')}</p>
