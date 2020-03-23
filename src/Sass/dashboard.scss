@@ -162,19 +162,15 @@
 }
 
 .content-dashboard {
-  flex: 0 0 80%;
-  max-width: 80%;;
+  flex: 0 0 100%;
+  max-width: 100%;;
   height: auto;
   margin-left: auto;
   transition: all 0.4s;
 
   .table-scroll {
     max-height: 259px;
-    overflow: hidden;
-
-    &:hover {
-      overflow-y: auto;
-    }
+    overflow: auto;
     .content-dashboard-table {
       width: 100%;
       margin-left: auto;
@@ -383,10 +379,10 @@
 
       &__bottom {
         margin-top: 15px;
-
+        margin-left: 10px;
+        display: inline-block;
         button {
           outline: none;
-          margin-left: 10px;
           background-color: #3f51b5;
           border: 1px solid #3f51b5;
           padding: 10px;
@@ -398,6 +394,9 @@
 
           &:hover {
             background-color: #121f6b;
+          }
+          &:disabled,{
+            opacity: 0.5;
           }
         }
       }

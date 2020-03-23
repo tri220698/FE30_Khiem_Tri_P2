@@ -32,29 +32,27 @@ const Login = ({ history }) => {
       else if (findUser.role === 0 && findUser.password === user.password) {
         alert(t('admin'))
         sessionStorage.setItem('userData', JSON.stringify(findUser))
-        window.location.pathname = "/admin"
+        window.location.pathname = "/admin/users"
       }
       else if (findUser.role === 1 && findUser.password === user.password) {
         alert(t('login.warning.success'))
-        sessionStorage.setItem('userData', JSON.stringify(findUser))
+        sessionStorage.setItem('userData', JSON.stringify(findUser.username))
         window.location.pathname = ('/')
       }
       else {
         alert(t('login.warning.wrong'))
       }
+
     };
     GetData()
 
   }
-
-
 
   const handleChange = (e) => {
     const target = e.target;
     const { name, value } = target;
     setUser({ ...user, [name]: value });
   }
-
 
   return (
     <React.Fragment>
@@ -105,10 +103,8 @@ const Login = ({ history }) => {
           </div>
         </div>
       </section>
-
     </React.Fragment>
   )
 }
-
 
 export default Login
