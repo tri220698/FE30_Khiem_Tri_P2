@@ -193,7 +193,7 @@
     "admin": "Admin",
     "menu": {
       "Dashboard": "Dashboard",
-      "Categories": "Categories",
+      "Carts": "Carts",
       "Products": "Products",
       "Users": "Users",
       "Account": "Account"
@@ -208,7 +208,7 @@
       "2": "Customer",
       "3": "Phone",
       "4": "Addrres",
-      "5": "Band"
+      "5": "Delete"
     },
     "form": {
       "1": "Nobody",
@@ -221,6 +221,14 @@
       "8": "Password",
       "9": "Confirm Password",
       "10": "SAVE DETAILS"
+    },
+    "carts": {
+      "1": "Code",
+      "2": "Username",
+      "3": "Time Order",
+      "4": "Total Money",
+      "5": "Status",
+      "6": "Chỉnh sửa đơn hàng thành công !!!"
     }
   },
   "error": {

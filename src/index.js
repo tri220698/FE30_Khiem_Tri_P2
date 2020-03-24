@@ -16,7 +16,7 @@ let store = createStore(allReducers,
 ReactDOM.render(
 
   <Provider store={store}>
-    <Suspense fallback="loading">
+    <Suspense fallback={(<div className="loader"></div>)}>
       <App />
     </Suspense>
   </Provider>
