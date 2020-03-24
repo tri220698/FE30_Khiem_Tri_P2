@@ -14,50 +14,68 @@ const Order = () => {
   const order = JSON.parse(sessionStorage.getItem('order'))
   const user = useSelector(state => state.user)
   const cart = useSelector(state => state.cart)
+
   const dispatch = useDispatch()
 
   const handeConfirm = async (e) => {
     e.preventDefault();
-    const update = UpdateHistory(cart, user.username)
-    const a = await updateHistory(update)
-    const up = await updateBought(cart)
+    await upUser(cart, user)
+    await updateBought(cart)
+    await UpdateHistory(cart, user)
     user.cart = []
     dispatch(removeCart())
-    const confirm = await updateUser(user)
-    sessionStorage.setItem('userData', JSON.stringify(user.username))
-    window.location.pathname = await '/confirm'
+    await move()
   }
 
-  const UpdateHistory = (cart, username) => {
+  const UpdateHistory = async (cart, user) => {
     let history = new Object()
-    history.cart = cart
-    history.cart.map((item, index) => {
-      delete item.votes
-      delete item.countRate
-      delete item.bought
-      delete item.timeActive
-      delete item.addNewDate
-    })
-    history.username = username
-    history.status = "pending"
-    history.timeOrder = (new Date()).getTime()
-    return history
+    history = {
+      cart: cart,
+      username: user.username,
+      status: "pending",
+      timeOrder: (new Date()).getTime()
+    }
+    await updateHistory(history)
   }
 
   const updateBought = async (cart) => {
-    const productList = await getData('products')
-    productList.map((item, index) => {
-      cart.map(itemCart => {
-        if (item.id === itemCart.id) {
-          item.bought++
-          item.timeActive = (new Date()).getTime()
-          const update = async () => {
-            const up = await updatePro(item)
-          }
-          update()
-        }
-      })
-    })
+    for (let item of cart) {
+      let orderData = {
+        id: item.id,
+        name: item.name,
+        image: item.image,
+        price: item.price,
+        votes: item.votes,
+        countRate: item.countRate,
+        bought: item.bought + 1,
+        timeActive: (new Date()).getTime(),
+        category: item.category,
+        addNewDate: item.addNewDate
+      }
+      await updatePro(orderData)
+    }
+  }
+
+  const upUser = async (cart, user) => {
+    let upU = {
+      id: user.id,
+      username: user.username,
+      name: user.name,
+      mail: user.mail,
+      phone: user.phone,
+      addrres: user.addrres,
+      password: user.password,
+      role: user.role,
+      cart: [],
+      sumPro: user.sumPro + TotalQuan(cart),
+      sumPay: user.sumPay + TotalMoney(cart) + TotalMoney(cart) / 10
+    }
+    sessionStorage.setItem('userData', JSON.stringify(upU))
+    await updateUser(upU)
+  }
+
+  const move = async () => {
+    window.location.pathname = ('/confirm')
   }
 
   if (order) {

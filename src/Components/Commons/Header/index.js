@@ -15,14 +15,9 @@ const MenuMaster = () => {
 
   useEffect(() => {
     if (SaveUser) {
-      const getUser = async () => {
-        const up = await getByUser(SaveUser)
-        dispatch(getUserData(up))
-        dispatch(getUserCart(up.cart))
-        dispatch(getProducts(null))
-        setBool(true)
-      }
-      getUser()
+      dispatch(getUserData(SaveUser))
+      dispatch(getUserCart(SaveUser.cart))
+      setBool(true)
     }
     else {
       dispatch(getProducts(null))
