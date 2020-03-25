@@ -1,10 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
+import {formatter} from '../mixin/mixin'
 
 
 const UserForm = (props) => {
 
-  const {user,submitHandler,handleChange,setConfirm,confirm} = props
+  const { user, submitHandler, handleChange, setConfirm, confirm } = props
   const { t } = useTranslation();
 
 
@@ -33,6 +34,16 @@ const UserForm = (props) => {
             <div className="bar"></div>
           </div>
           <div className="input-container"><input type="password" required="required" value={confirm} name="confirm" onChange={(e) => setConfirm(e.target.value)} /><label >Confirm Password</label>
+            <div className="bar"></div>
+          </div>
+          <div className="input-container"><input type="text" required="required"
+            value={user.sumPro} name="sumPro" onChange={e => e.preventDefault()} /><label
+            >{t('dashboard.form.11')}</label>
+            <div className="bar"></div>
+          </div>
+          <div className="input-container"><input type="text" required="required"
+            value={formatter.format(user.sumPay) !== formatter.format(NaN) ? formatter.format(user.sumPay) : ""} name="sumPay" onChange={e => e.preventDefault()} /><label
+            >{t('dashboard.form.12')}</label>
             <div className="bar"></div>
           </div>
         </div>

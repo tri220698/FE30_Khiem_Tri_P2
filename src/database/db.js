@@ -15,10 +15,9 @@ export const getData = (page) => {
 export const RegisUser = (data) => {
   return axios.post(`${url}/user`, data)
     .then(res => {
-      console.log(res)
+      return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const getProduct = (id) => {
@@ -27,7 +26,6 @@ export const getProduct = (id) => {
       return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const updateUser = (user) => {
@@ -36,22 +34,18 @@ export const updateUser = (user) => {
       return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const updateProduct = (product) => {
   return axios.put(`${url}/products/${product.id}`, product)
     .then(res => {
-      return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const updateHistory = (history) => {
   return axios.post(`${url}/carts`, history)
     .then(res => {
-      console.log(res)
     })
     .catch(error => window.location.pathname = ('/error'))
 
@@ -60,10 +54,9 @@ export const updateHistory = (history) => {
 export const updatePro = (product) => {
   return axios.put(`${url}/products/${product.id}`, product)
     .then(res => {
-      console.log(res)
+      return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const getCartsByUser = (username) => {
@@ -72,7 +65,6 @@ export const getCartsByUser = (username) => {
       return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const deleteUser = (user) => {
@@ -81,7 +73,6 @@ export const deleteUser = (user) => {
       return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const getAdmin = () => {
@@ -90,7 +81,6 @@ export const getAdmin = () => {
       return res.data
     })
     .catch(error => window.location.pathname = ('/error'))
-
 }
 
 export const getByUser = (username) => {
@@ -103,6 +93,8 @@ export const getByUser = (username) => {
 
 export const updateCart = (item) => {
   return axios.put(`${url}/carts/${item.id}`, item)
-    .then(res => {})
+    .then(res => {
+      return res.data
+    })
     .catch(error => window.location.pathname = ('/error'))
 }

@@ -43,11 +43,14 @@ const Register = ({ history }) => {
     else {
       alert(t('register.warning.success'))
       delete newUser.confirm
+      newUser.id = parseInt(dataUser.length + 1)
+      newUser.sumPro = 0
+      newUser.sumPay = 0
       newUser.role = 1
       newUser.cart = []
       setNewUser(newUser)
       const regis = await RegisUser(newUser)
-      sessionStorage.setItem('userData', JSON.stringify(newUser.username))
+      sessionStorage.setItem('userData', JSON.stringify(newUser))
       window.location.pathname = ('/')
     }
   }

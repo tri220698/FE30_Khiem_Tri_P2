@@ -3,6 +3,7 @@ import avatarImg from '../../../img/admin-ui.svg';
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next';
 import { updateUser } from '../../../database/db'
+import { formatter } from '../../mixin/mixin'
 
 const UserForm = (props) => {
 
@@ -10,6 +11,7 @@ const UserForm = (props) => {
   const [User, setUser] = useState(user || Object)
   const [confirm, setConfirm] = useState("")
   const { t } = useTranslation();
+  const [sumPay, setPay] = useState(0)
 
 
   useEffect(() => {
@@ -90,6 +92,16 @@ const UserForm = (props) => {
             <div className="input-container"><input type="text" required="required"
               value={confirm || ""} name="mail" onChange={(e) => setConfirm(e.target.value)} /><label
               >{t('dashboard.form.9')}</label>
+              <div className="bar"></div>
+            </div>
+            <div className="input-container"><input type="text" required="required"
+              value={User.sumPro} name="sumPro" onChange={e => e.preventDefault()} /><label
+              >{t('dashboard.form.11')}</label>
+              <div className="bar"></div>
+            </div>
+            <div className="input-container"><input type="text" required="required"
+              value={formatter.format(User.sumPay) !== formatter.format(NaN) ? formatter.format(User.sumPay) : ""} name="sumPay" onChange={e => e.preventDefault()} /><label
+              >{t('dashboard.form.12')}</label>
               <div className="bar"></div>
             </div>
           </div>
